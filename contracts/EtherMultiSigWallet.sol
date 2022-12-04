@@ -6,10 +6,11 @@ pragma solidity ^0.8.17;
 
 contract EtherMultiSigWallet {
 
-    address public payable owner;
+    address payable owner;
 
-    constructor(address _owner) {
+    constructor() {
         owner = payable(msg.sender);
+    }
 
     function deposit() external payable {
 
@@ -19,8 +20,8 @@ contract EtherMultiSigWallet {
        if(msg.sender == owner){
            reciever.transfer(amount);
            return;
-       }else {
-           revert("ONLY_OWNER_ALLOWED")
+       } else {
+           revert("ONLY_OWNER_ALLOWED");
        }
     }
 
