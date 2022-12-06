@@ -14,10 +14,11 @@ module.exports = {
   //   hardhat: "1337"
   // },
   goerli: {
-    //url: https:goerli-testnet-node.com
-    //accounts: private key or [ privateKey, privateKey]
+    url: `https://goerli.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+    accounts: [`0x${process.env.PRIVATE_KEY}`]
   }
 };
+
 
 //deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
